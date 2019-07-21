@@ -63,7 +63,7 @@ export const createImmutableDenseMatrixClass = /* #__PURE__ */ factory(name, dep
    *                                  the matrix is resized. If not provided,
    *                                  new matrix elements will be filled with zeros.
    */
-  ImmutableDenseMatrix.prototype.subset = function (index) {
+  ImmutableDenseMatrix.prototype.subset = function (index, replacement, defaultValue) {
     switch (arguments.length) {
       case 1:
         // use base implementation
@@ -98,7 +98,7 @@ export const createImmutableDenseMatrixClass = /* #__PURE__ */ factory(name, dep
    *                                  new matrix elements will be left undefined.
    * @return {ImmutableDenseMatrix} self
    */
-  ImmutableDenseMatrix.prototype.set = function () {
+  ImmutableDenseMatrix.prototype.set = function (index, value, defaultValue) {
     throw new Error('Cannot invoke set on an Immutable Matrix instance')
   }
 
@@ -114,7 +114,7 @@ export const createImmutableDenseMatrixClass = /* #__PURE__ */ factory(name, dep
    *
    * @return {Matrix}                 The resized matrix
    */
-  ImmutableDenseMatrix.prototype.resize = function () {
+  ImmutableDenseMatrix.prototype.resize = function (size, defaultValue, copy) {
     throw new Error('Cannot invoke resize on an Immutable Matrix instance')
   }
 

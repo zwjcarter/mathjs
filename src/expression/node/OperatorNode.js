@@ -13,7 +13,7 @@ const dependencies = [
 
 export const createOperatorNode = /* #__PURE__ */ factory(name, dependencies, ({ Node }) => {
   /**
-   * @constructor OperatorNode
+   * @class OperatorNode
    * @extends {Node}
    * An operator with two arguments, like 2+3
    *

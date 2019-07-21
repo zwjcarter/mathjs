@@ -252,6 +252,7 @@ export const createUnitClass = /* #__PURE__ */ factory(name, dependencies, ({
    * cannot be parsed.
    * @memberof Unit
    * @param {string} str        A string like "5.2 inch", "4e2 cm/s^2"
+   * @param {Object} [options]
    * @return {Unit} unit
    */
   Unit.parse = function (str, options) {

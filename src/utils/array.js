@@ -558,7 +558,7 @@ export function getArrayDataType (array, typeOf) {
 
 /**
  * Return the last item from an array
- * @param array
+ * @param {Array} array
  * @returns {*}
  */
 export function last (array) {
@@ -567,6 +567,8 @@ export function last (array) {
 
 /**
  * Get all but the last element of array.
+ * @param {Array} array
+ * @return {Array}
  */
 export function initial (array) {
   return array.slice(0, array.length - 1)

@@ -2,7 +2,12 @@ import { mapObject } from './object'
 import { isNumber } from './is'
 
 /**
- * @typedef {{sign: '+' | '-' | '', coefficients: number[], exponent: number}} SplitValue
+ *
+ * @typedef {'+' | '-' | ''} Sign
+ */
+
+/**
+ * @typedef {{sign: Sign, coefficients: number[], exponent: number}} SplitValue
  */
 
 /**
@@ -268,7 +273,8 @@ export function splitNumber (value) {
     throw new SyntaxError('Invalid number ' + value)
   }
 
-  const sign = match[1]
+  // @ts-ignore
+  /** @type {Sign} */ const sign = match[1]
   const digits = match[2]
   let exponent = parseFloat(match[4] || '0')
 
@@ -302,7 +308,7 @@ export function splitNumber (value) {
 
 /**
  * Format a number in engineering notation. Like '1.23e+6', '2.3e+0', '3.500e-3'
- * @param {number | string} value
+ * @param {number} value
  * @param {number} [precision]        Optional number of significant figures to return.
  */
 export function toEngineering (value, precision) {
@@ -357,7 +363,7 @@ export function toEngineering (value, precision) {
 
 /**
  * Format a number with fixed notation.
- * @param {number | string} value
+ * @param {number} value
  * @param {number} [precision=undefined]  Optional number of decimals after the
  *                                        decimal point. null by default.
  */
@@ -370,7 +376,7 @@ export function toFixed (value, precision) {
   const rounded = (typeof precision === 'number')
     ? roundDigits(splitValue, splitValue.exponent + 1 + precision)
     : splitValue
-  let c = rounded.coefficients
+  /** @type {Array} */ let c = rounded.coefficients
   let p = rounded.exponent + 1 // exponent may have changed
 
   // append zeros if needed
@@ -395,7 +401,7 @@ export function toFixed (value, precision) {
 
 /**
  * Format a number in exponential notation. Like '1.23e+5', '2.3e+0', '3.500e-3'
- * @param {number | string} value
+ * @param {number} value
  * @param {number} [precision]  Number of digits in formatted output.
  *                              If not provided, the maximum available digits
  *                              is used.
@@ -424,7 +430,7 @@ export function toExponential (value, precision) {
 
 /**
  * Format a number with a certain precision
- * @param {number | string} value
+ * @param {number} value
  * @param {number} [precision=undefined] Optional number of digits.
  * @param {{lowerExp: number | undefined, upperExp: number | undefined}} [options]
  *                                       By default:
@@ -447,7 +453,7 @@ export function toPrecision (value, precision, options) {
     // exponential notation
     return toExponential(value, precision)
   } else {
-    let c = rounded.coefficients
+    /** @type {Array} */ let c = rounded.coefficients
     const e = rounded.exponent
 
     // append trailing zeros

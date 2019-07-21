@@ -1,4 +1,4 @@
-import Complex from 'complex.js'
+import /** @type {Complex} */ Complex from 'complex.js'
 import { format } from '../../utils/number'
 import { isNumber, isUnit } from '../../utils/is'
 import { factory } from '../../utils/factory'

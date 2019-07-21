@@ -16,7 +16,7 @@
  *
  * @param {BigNumber} x
  * @param {BigNumber} y
- * @return {BigNumber} Result of `x` & `y`, is fully precise
+ * @return {BigNumber} Result of `x & y`, is fully precise
  * @private
  */
 export function bitAndBigNumber (x, y) {
@@ -143,7 +143,7 @@ export function bitOrBigNumber (x, y) {
  * Applies bitwise function to numbers
  * @param {BigNumber} x
  * @param {BigNumber} y
- * @param {function (a, b)} func
+ * @param {function (number, number) : number} func
  * @return {BigNumber}
  */
 export function bitwise (x, y, func) {

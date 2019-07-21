@@ -16,28 +16,46 @@ export function isNumber (x) {
   return typeof x === 'number'
 }
 
+/**
+ * @param {*} x
+ */
 export function isBigNumber (x) {
   return (x && x.constructor.prototype.isBigNumber === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isComplex (x) {
   return (x && typeof x === 'object' && Object.getPrototypeOf(x).isComplex === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isFraction (x) {
   return (x && typeof x === 'object' && Object.getPrototypeOf(x).isFraction === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isUnit (x) {
   return (x && x.constructor.prototype.isUnit === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isString (x) {
   return typeof x === 'string'
 }
 
 export const isArray = Array.isArray
 
+/**
+ * @param {*} x
+ */
 export function isMatrix (x) {
   return (x && x.constructor.prototype.isMatrix === true) || false
 }
@@ -51,46 +69,79 @@ export function isCollection (x) {
   return Array.isArray(x) || isMatrix(x)
 }
 
+/**
+ * @param {*} x
+ */
 export function isDenseMatrix (x) {
   return (x && x.isDenseMatrix && x.constructor.prototype.isMatrix === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isSparseMatrix (x) {
   return (x && x.isSparseMatrix && x.constructor.prototype.isMatrix === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isRange (x) {
   return (x && x.constructor.prototype.isRange === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isIndex (x) {
   return (x && x.constructor.prototype.isIndex === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isBoolean (x) {
   return typeof x === 'boolean'
 }
 
+/**
+ * @param {*} x
+ */
 export function isResultSet (x) {
   return (x && x.constructor.prototype.isResultSet === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isHelp (x) {
   return (x && x.constructor.prototype.isHelp === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isFunction (x) {
   return typeof x === 'function'
 }
 
+/**
+ * @param {*} x
+ */
 export function isDate (x) {
   return x instanceof Date
 }
 
+/**
+ * @param {*} x
+ */
 export function isRegExp (x) {
   return x instanceof RegExp
 }
 
+/**
+ * @param {*} x
+ */
 export function isObject (x) {
   return !!(x &&
     typeof x === 'object' &&
@@ -99,78 +150,135 @@ export function isObject (x) {
     !isFraction(x))
 }
 
+/**
+ * @param {*} x
+ */
 export function isNull (x) {
   return x === null
 }
 
+/**
+ * @param {*} x
+ */
 export function isUndefined (x) {
   return x === undefined
 }
 
+/**
+ * @param {*} x
+ */
 export function isAccessorNode (x) {
   return (x && x.isAccessorNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isArrayNode (x) {
   return (x && x.isArrayNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isAssignmentNode (x) {
   return (x && x.isAssignmentNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isBlockNode (x) {
   return (x && x.isBlockNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isConditionalNode (x) {
   return (x && x.isConditionalNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isConstantNode (x) {
   return (x && x.isConstantNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isFunctionAssignmentNode (x) {
   return (x && x.isFunctionAssignmentNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isFunctionNode (x) {
   return (x && x.isFunctionNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isIndexNode (x) {
   return (x && x.isIndexNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isNode (x) {
   return (x && x.isNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isObjectNode (x) {
   return (x && x.isObjectNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isOperatorNode (x) {
   return (x && x.isOperatorNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isParenthesisNode (x) {
   return (x && x.isParenthesisNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isRangeNode (x) {
   return (x && x.isRangeNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isSymbolNode (x) {
   return (x && x.isSymbolNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function isChain (x) {
   return (x && x.constructor.prototype.isChain === true) || false
 }
 
+/**
+ * @param {*} x
+ */
 export function typeOf (x) {
   const t = typeof x
 

@@ -102,7 +102,7 @@ export const createAccessorNode = /* #__PURE__ */ factory(name, dependencies, ({
 
   /**
    * Execute a callback for each of the child nodes of this node
-   * @param {function(child: Node, path: string, parent: Node)} callback
+   * @param {function(Node, string, Node) : void} callback
    */
   AccessorNode.prototype.forEach = function (callback) {
     callback(this.object, 'object', this)
@@ -112,7 +112,7 @@ export const createAccessorNode = /* #__PURE__ */ factory(name, dependencies, ({
   /**
    * Create a new AccessorNode having it's childs be the results of calling
    * the provided callback function for each of the childs of the original node.
-   * @param {function(child: Node, path: string, parent: Node): Node} callback
+   * @param {function(Node, string, Node): Node} callback
    * @returns {AccessorNode} Returns a transformed copy of the node
    */
   AccessorNode.prototype.map = function (callback) {

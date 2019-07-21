@@ -671,7 +671,6 @@ export const createDenseMatrixClass = /* #__PURE__ */ factory(name, dependencies
    * @param {number | Matrix | Array } value The values for the diagonal.
    * @param {number | BigNumber} [k=0]       The kth diagonal where the vector will be filled in.
    * @param {number} [defaultValue]          The default value for non-diagonal
-   * @param {string} [datatype]              The datatype for the diagonal
    *
    * @returns {DenseMatrix}
    */

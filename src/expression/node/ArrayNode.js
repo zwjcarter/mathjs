@@ -1,3 +1,4 @@
+import './Node'
 import { isNode } from '../../utils/is'
 import { map } from '../../utils/array'
 import { factory } from '../../utils/factory'
@@ -9,7 +10,7 @@ const dependencies = [
 
 export const createArrayNode = /* #__PURE__ */ factory(name, dependencies, ({ Node }) => {
   /**
-   * @constructor ArrayNode
+   * @class ArrayNode
    * @extends {Node}
    * Holds an 1-dimensional array with items
    * @param {Node[]} [items]   1 dimensional array with items

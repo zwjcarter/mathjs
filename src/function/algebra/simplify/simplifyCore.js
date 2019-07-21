@@ -52,7 +52,7 @@ export const createSimplifyCore = /* #__PURE__ */ factory(name, dependencies, ({
    *
    *     derivative
    *
-   * @param {Node} node
+   * @param {Node | OperatorNode | ParenthesisNode | SymbolNode} node
    *     The expression to be simplified
    */
   function simplifyCore (node) {

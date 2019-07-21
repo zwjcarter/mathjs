@@ -10,7 +10,7 @@ const dependencies = ['mathWithTransform']
 
 export const createNode = /* #__PURE__ */ factory(name, dependencies, ({ mathWithTransform }) => {
   /**
-   * Node
+   * @class Node
    */
   function Node () {
     if (!(this instanceof Node)) {
@@ -130,7 +130,7 @@ export const createNode = /* #__PURE__ */ factory(name, dependencies, ({ mathWit
   /**
    * Recursively traverse all nodes in a node tree. Executes given callback for
    * this node and each of its child nodes.
-   * @param {function(node: Node, path: string, parent: Node)} callback
+   * @param {function(Node, string, Node) : Node | undefined} callback
    *          A callback called for every node in the node tree.
    */
   Node.prototype.traverse = function (callback) {
