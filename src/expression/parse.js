@@ -1,5 +1,5 @@
 import { factory } from '../utils/factory'
-import { isAccessorNode, isConstantNode, isFunctionNode, isOperatorNode, isSymbolNode } from '../utils/is'
+import { isAccessorNode, isConstantNode, isConstantUnaryNode, isFunctionNode, isOperatorNode, isSymbolNode } from '../utils/is'
 import { deepMap } from '../utils/collection'
 import { hasOwnProperty } from '../utils/object'
 
@@ -1041,7 +1041,7 @@ export const createParse = /* #__PURE__ */ factory(name, dependencies, ({
 
     while (true) {
       // Match the "number /" part of the pattern "number / number symbol"
-      if (state.token === '/' && isConstantNode(last)) {
+      if (state.token === '/' && (isConstantNode(last) || isConstantUnaryNode(last))) {
         // Look ahead to see if the next token is a number
         tokenStates.push(Object.assign({}, state))
         getTokenSkipNewline(state)

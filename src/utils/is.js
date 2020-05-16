@@ -131,6 +131,12 @@ export function isConstantNode (x) {
   return (x && x.isConstantNode === true && x.constructor.prototype.isNode === true) || false
 }
 
+export function isConstantUnaryNode (node) {
+  const fnNames = ['unaryMinus', 'unaryPlus', 'bitNot', 'not']
+
+  return isOperatorNode(node) && fnNames.indexOf(node.fn) !== -1 && isConstantNode(node.args[0])
+}
+
 export function isFunctionAssignmentNode (x) {
   return (x && x.isFunctionAssignmentNode === true && x.constructor.prototype.isNode === true) || false
 }

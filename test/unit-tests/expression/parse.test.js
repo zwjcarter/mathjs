@@ -1179,6 +1179,8 @@ describe('parse', function () {
       assert.strictEqual(parseAndStringifyWithParens('a b*c'), '(a b) * c')
       assert.strictEqual(parseAndStringifyWithParens('a*b c'), 'a * (b c)')
       assert.strictEqual(parseAndStringifyWithParens('a/b c'), 'a / (b c)')
+      assert.strictEqual(parseAndStringifyWithParens('-2/3 x'), '((-2) / 3) x')
+      assert.strictEqual(parseAndStringifyWithParens('+1/5 y'), '((+1) / 5) y')
 
       assert.strictEqual(parseAndStringifyWithParens('1/2a'), '(1 / 2) a')
       assert.strictEqual(parseAndStringifyWithParens('8/2a/2'), '((8 / 2) a) / 2')
